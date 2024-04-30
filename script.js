@@ -34,6 +34,12 @@ function operate(n1, op, n2){
             return n1 / n2;
         case '%':
             return n1 % n2;
+        case 'pow':
+            return n1 ** n2;
+        case 'root':
+            return n1 ** (1/n2);
+        case 'inv':
+            return 1/n2;
         default:
             return 'error';   
     }
@@ -46,16 +52,22 @@ butts.forEach(butt => {
         if(butt.textContent === 'C' || butt.textContent === 'CE'){
             clear();
         }
-        else if('+-*/%'.includes(butt.textContent)){
+        else if('+-*/%powroot'.includes(butt.textContent)){
             op = butt.textContent
             topT = num1 + " " + op + " ";
             resT = "";
             display();
         }
+        else if(butt.textContent === 'inv' ){
+            op = butt.textContent
+            topT = op + " ";
+            resT = "";
+            display();
+        }
         else if(butt.textContent === '='){
             topT = topT + num2 + " = ";
-            num1 = parseInt(num1);
-            num2 = parseInt(num2);
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
             resT = operate(num1 , op, num2);
             display();
             topT = resT;
