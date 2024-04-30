@@ -1,0 +1,95 @@
+body {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+
+
+.calculator {
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    border: solid black 4px;
+    padding: 3px;
+}
+
+.calculator .display{
+    border: solid black 1px;
+}
+
+#nums {
+    width: 100%;
+    height: 40px;
+    border: solid black 1px;
+}
+
+#result {
+    width: 100%;
+    height: 80px;
+    border: solid black 1px;
+}
+
+.inputs {
+    display: flex;
+    height : 520px;
+    flex-direction: row;
+    gap: 3px;
+}
+
+.num-func {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.mod-clear {
+    height: 16.66%;
+    display: flex;
+    gap: 3px;
+}
+
+#clear {
+    width : 66.67%;
+    border: solid black 2px;
+}
+
+#mod {
+    width : 32.33%;
+    border: solid black 2px;
+}
+
+.func {
+    height: 16.66%;
+    display: flex;
+    gap: 3px;
+    justify-content: space-between;
+}
+
+.func div {
+    width: 33.33%;
+    border: solid black 2px;
+}
+.nums {
+    height: 64.68%;
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.nums div {
+    border: solid black 2px;
+}
+
+.operators {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.operators div {
+    border: solid black 2px;
+    height: 15.67%;
+}
