@@ -16,11 +16,37 @@ function clear(){
     display();
 }
 
+function equals(){
+    if(num2 === ""){
+        topT = num1 + " = ";
+        num1 = parseFloat(num1);
+        display();
+        topT = resT;
+        num1 = resT;
+        num2 = "";
+        resT = "";
+        op = "";
+    }
+    else{
+        topT = topT + num2 + " = ";
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+        resT = operate(num1 , op, num2);
+        display();
+        topT = resT;
+        num1 = resT;
+        num2 = "";
+        op = "";
+    }
+    resOn = true;
+}
+
 let resT = "";
 let topT = "";
 let op = "";
 let num1 = "";
 let num2 = "";
+let resOn = true;
 
 function operate(n1, op, n2){
     switch (op) {
@@ -53,10 +79,20 @@ butts.forEach(butt => {
             clear();
         }
         else if('+-*/%powroot'.includes(butt.textContent)){
-            op = butt.textContent
-            topT = num1 + " " + op + " ";
-            resT = "";
-            display();
+            if(op === ""){
+                op = butt.textContent
+                topT = num1 + " " + op + " ";
+                resT = "";
+                display();
+            }
+            else {
+                equals();
+                op = butt.textContent;
+                result.innerHTML = "";
+                topT = num1 + " " + op + " ";
+                resT = "";
+                display();
+            }
         }
         else if(butt.textContent === 'inv' ){
             op = butt.textContent
@@ -65,15 +101,7 @@ butts.forEach(butt => {
             display();
         }
         else if(butt.textContent === '='){
-            topT = topT + num2 + " = ";
-            num1 = parseFloat(num1);
-            num2 = parseFloat(num2);
-            resT = operate(num1 , op, num2);
-            display();
-            topT = resT;
-            num1 = resT;
-            num2 = "";
-            op = "";
+            equals();
         }
         else if(op != ""){
             num2 = num2 + butt.textContent;
@@ -81,6 +109,10 @@ butts.forEach(butt => {
             display();
         }
         else{
+            if(resOn){
+                clear();
+            }
+            resOn = false;
             num1 = num1 + butt.textContent;
             resT = resT + butt.textContent;
             display();
