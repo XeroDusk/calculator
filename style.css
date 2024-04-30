@@ -14,10 +14,12 @@ body {
     gap: 1px;
     border: solid black 4px;
     padding: 3px;
+    padding-top: 15px;
 }
 
 .calculator .display{
     border: solid black 1px;
+    margin-inline: 10px;
 }
 
 #nums {
@@ -33,63 +35,20 @@ body {
 }
 
 .inputs {
-    display: flex;
-    height : 520px;
-    flex-direction: row;
-    gap: 3px;
-}
-
-.num-func {
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.mod-clear {
-    height: 16.66%;
-    display: flex;
-    gap: 3px;
-}
-
-#clear {
-    width : 66.67%;
-    border: solid black 2px;
-}
-
-#mod {
-    width : 32.33%;
-    border: solid black 2px;
-}
-
-.func {
-    height: 16.66%;
-    display: flex;
-    gap: 3px;
-    justify-content: space-between;
-}
-
-.func div {
-    width: 33.33%;
-    border: solid black 2px;
-}
-.nums {
-    height: 64.68%;
     display: grid;
-    gap: 3px;
-    grid-template-columns: repeat(3, 1fr);
-}
-.nums div {
-    border: solid black 2px;
+    grid-template-columns: repeat(4, 1fr);
+    height : 520px;
+    gap: 5px;
+    margin: 20px 10px;
 }
 
-.operators {
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-.operators div {
+.inputs div {
     border: solid black 2px;
-    height: 15.67%;
+    text-align: center;
+    padding: 20%;
+    transition: transform .1s;
+}
+
+.inputs div:hover {
+    transform: scale(1.05);
 }
