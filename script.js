@@ -32,11 +32,19 @@ function equals(){
         num1 = parseFloat(num1);
         num2 = parseFloat(num2);
         resT = operate(num1 , op, num2);
-        display();
+        if(resT != Infinity){
+            resT = resT.toFixed(12);
+            display();
+        }
+        else{
+            topT = "";
+            resT = "FBI !! OPEN UP !!! ";
+            display();
+        }
         topT = resT;
         num1 = resT;
         num2 = "";
-        op = "";
+        op = ""; 
     }
     resOn = true;
 }
