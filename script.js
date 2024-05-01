@@ -33,7 +33,6 @@ function equals(){
         num2 = parseFloat(num2);
         resT = operate(num1 , op, num2);
         if(resT != Infinity){
-            resT = resT.toFixed(12);
             display();
         }
         else{

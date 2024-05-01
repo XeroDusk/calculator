@@ -1,3 +1,22 @@
+@font-face {
+    font-family: 'Ancient Modern Tales';
+    src: url('fonts/Ancient-Modern-Tales.woff2') format('woff2'),
+        url('fonts/Ancient-Modern-Tales.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monalized';
+    src: url('fonts/MONALIZEDRegular.woff2') format('woff2'),
+        url('fonts/MONALIZEDRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 body {
     display: flex;
     justify-content: center;
@@ -13,13 +32,19 @@ body {
     flex-direction: column;
     gap: 1px;
     border: solid black 4px;
+    border-radius: 10px 5px ;
     padding: 3px;
     padding-top: 15px;
+    padding-bottom: 20px;
+    background-color: rgb(93, 16, 131);
 }
 
 .calculator .display{
-    border: solid black 2px;
+    border: solid black 10px;
+    background-color: rgb(10, 100, 63);
     margin-inline: 10px;
+    font-family: 'Ancient Modern Tales';
+    margin-bottom: 20px;
 }
 
 #nums {
@@ -47,15 +72,20 @@ body {
     height : 520px;
     gap: 5px;
     margin: 20px 10px;
+    padding-inline: 10px;
 }
 
 .inputs div {
-    border: solid black 2px;
+    font-family: 'Monalized';
+    font-weight: 600;
+    border: solid black 3px;
+    border-radius: 50px;
     text-align: center;
     padding: 20%;
     transition: transform .1s;
+    background-color: rgb(92, 90, 90);
 }
 
 .inputs div:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
